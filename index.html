@@ -6,6 +6,7 @@
 <title>Lounge Café – Marokkanisches Restaurant Krefeld</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Lounge Café am Ostwall 49A in Krefeld: authentische marokkanische Küche, alles hausgemacht. Marokkanisches Frühstück, Tajine, Couscous, Msemen, Harcha und frischer Minztee.">
+<link rel="icon" href="logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -39,6 +40,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(10,15,23,.92);backdrop-f
 header.scrolled{border-bottom-color:var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;gap:1.5rem}
 .logo{display:flex;align-items:center;gap:.8rem}
+.logo-img{width:70px;height:70px;border-radius:50%;object-fit:cover;border:1px solid var(--gold);transition:.3s}
+header.scrolled .logo-img{width:54px;height:54px}
+.hero video.bg{width:100%;height:100%;object-fit:cover;animation:none;transform:none}
+.th{width:58px;height:58px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--line);margin-right:.2rem;cursor:zoom-in}
+.dish.has{display:flex;gap:1rem;align-items:center}.dish.has>div{flex:1}
+.panel-img{width:100%;height:100%;min-height:320px;object-fit:cover;border-radius:4px}
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:900px;margin:0 auto}
+.reel{position:relative;aspect-ratio:9/16;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel span{position:absolute;left:0;right:0;bottom:0;padding:1.2rem 1rem .9rem;background:linear-gradient(transparent,rgba(10,15,23,.9));font-family:var(--serif);font-size:1.3rem}
+@media(max-width:700px){.reels{grid-template-columns:1fr 1fr}.reels .reel:last-child{display:none}}
 .emblem{width:72px;height:72px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;position:relative;transition:.3s}
 header.scrolled .emblem{width:56px;height:56px}
 .emblem::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1px dashed rgba(217,160,102,.5)}
@@ -290,7 +302,7 @@ footer .bottom a:hover{color:var(--cream)}
 <header id="top">
   <div class="wrap">
     <a href="#start" class="logo" aria-label="Lounge Café – Startseite">
-      <div class="emblem"><b>Lc</b></div>
+      <img class="logo-img" src="logo.jpg" alt="Lounge Café Logo">
       <div class="name">Lounge Café<small>Marokkanisches Restaurant</small></div>
     </a>
     <nav>
@@ -310,12 +322,12 @@ footer .bottom a:hover{color:var(--cream)}
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="start" style="padding:0;margin-top:1rem">
-  <div class="bg" data-bg="storefront"></div>
+  <video class="bg" autoplay muted loop playsinline poster="hero-poster.jpg"><source src="hero.mp4" type="video/mp4"></video>
   <div class="content">
     <div class="eyebrow">Herzlich willkommen</div>
     <div class="arabic" lang="ar" dir="rtl">مرحبا بكم</div>
     <h1>Authentische Küche<br>aus <em>Marokko</em></h1>
-    <p class="lead">Mitten in Krefeld am Ostwall – marokkanisches Frühstück, duftende Tajines, frisches Msemen und Minztee wie in Marokko. Alles hausgemacht.</p>
+    <p class="lead">Mitten in Krefeld am Ostwall 49A – marokkanisches Frühstück, duftende Tajines, frisches Msemen und Minztee wie in Marokko. Alles hausgemacht.</p>
     <div class="cta">
       <a href="#speisekarte" class="btn">Speisekarte</a>
       <a href="#kontakt" class="btn ghost">Tisch reservieren</a>
@@ -338,17 +350,17 @@ footer .bottom a:hover{color:var(--cream)}
       <div class="divider"><svg viewBox="0 0 24 24"><path d="M12 1l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/></svg></div>
     </div>
     <div class="cats">
-      <a class="cat reveal" href="#speisekarte" data-tab="fruehstueck"><img data-img="breakfast" alt="Marokkanisches Frühstück"><div class="txt"><h3>Frühstück</h3><p>Harcha, Msemen, Amlou &amp; Minztee</p><span class="more">Ansehen</span></div></a>
-      <a class="cat reveal" href="#speisekarte" data-tab="tajine"><img data-img="tajine" alt="Tajine"><div class="txt"><h3>Tajine &amp; Couscous</h3><p>Langsam geschmort, fein gewürzt</p><span class="more">Ansehen</span></div></a>
-      <a class="cat reveal" href="#speisekarte" data-tab="spezial"><img data-img="sweets" alt="Marokkanisches Gebäck"><div class="txt"><h3>Spezialitäten</h3><p>Schebakia, Mille-Feuille, Datteln</p><span class="more">Ansehen</span></div></a>
-      <a class="cat reveal" href="#speisekarte" data-tab="getraenke"><img data-img="icedtea" alt="Marokkanischer Minztee"><div class="txt"><h3>Minztee &amp; Getränke</h3><p>Frisch aufgegossen, wie zu Hause</p><span class="more">Ansehen</span></div></a>
+      <a class="cat reveal" href="#speisekarte" data-tab="fruehstueck"><img data-img="fruehstueck" alt="Marokkanisches Frühstück"><div class="txt"><h3>Frühstück</h3><p>Harcha, Msemen, Amlou &amp; Minztee</p><span class="more">Ansehen</span></div></a>
+      <a class="cat reveal" href="#speisekarte" data-tab="tajine"><img data-img="tajine-kefta" alt="Tajine Kefta"><div class="txt"><h3>Tajine &amp; Couscous</h3><p>Langsam geschmort, fein gewürzt</p><span class="more">Ansehen</span></div></a>
+      <a class="cat reveal" href="#speisekarte" data-tab="spezial"><img data-img="gebaeck" alt="Marokkanisches Gebäck"><div class="txt"><h3>Spezialitäten</h3><p>Schebakia, Mille-Feuille, Datteln</p><span class="more">Ansehen</span></div></a>
+      <a class="cat reveal" href="#speisekarte" data-tab="getraenke"><img data-img="int-tee" alt="Marokkanischer Minztee"><div class="txt"><h3>Minztee &amp; Getränke</h3><p>Frisch aufgegossen, wie zu Hause</p><span class="more">Ansehen</span></div></a>
     </div>
   </div>
 </section>
 
 <!-- ============ ÜBER UNS + ÖFFNUNGSZEITEN ============ -->
 <section class="about" id="ueber-uns">
-  <div class="bg" data-bg="interior"></div>
+  <div class="bg" data-bg="int-sofa"></div>
   <div class="wrap">
     <div class="title reveal">
       <div class="eyebrow">Marokkanische Küche</div>
@@ -363,12 +375,12 @@ footer .bottom a:hover{color:var(--cream)}
       <h3>Öffnungszeiten</h3>
       <ul id="hours">
         <li data-d="1"><span>Montag</span><span>09:00 – 16:00</span></li>
-        <li data-d="2"><span>Dienstag</span><span>09:00 – 23:30</span></li>
-        <li data-d="3"><span>Mittwoch</span><span>09:00 – 23:30</span></li>
-        <li data-d="4"><span>Donnerstag</span><span>09:00 – 23:30</span></li>
-        <li data-d="5"><span>Freitag</span><span>17:00 – 00:00</span></li>
+        <li data-d="2"><span>Dienstag</span><span>09:00 – 23:00</span></li>
+        <li data-d="3"><span>Mittwoch</span><span>09:00 – 23:00</span></li>
+        <li data-d="4"><span>Donnerstag</span><span>09:00 – 23:00</span></li>
+        <li data-d="5"><span>Freitag</span><span>17:00 – 23:00</span></li>
         <li data-d="6"><span>Samstag</span><span>12:00 – 00:00</span></li>
-        <li data-d="0"><span>Sonntag</span><span>12:00 – 23:30</span></li>
+        <li data-d="0"><span>Sonntag</span><span>12:00 – 22:00</span></li>
       </ul>
       <div class="status" id="status"><i></i><span>–</span></div>
     </div>
@@ -396,17 +408,17 @@ footer .bottom a:hover{color:var(--cream)}
 
     <div class="tabs" role="tablist">
       <button class="tab active" data-t="fruehstueck">Frühstück</button>
-      <button class="tab" data-t="leckereien">Leckereien &amp; Suppen</button>
+      <button class="tab" data-t="leckereien">Leckereien</button>
+      <button class="tab" data-t="tagesgerichte">Tagesgerichte</button>
       <button class="tab" data-t="tajine">Tajine &amp; Couscous</button>
       <button class="tab" data-t="sandwich">Sandwich &amp; Teller</button>
       <button class="tab" data-t="spezial">Spezialitäten</button>
       <button class="tab" data-t="getraenke">Getränke</button>
     </div>
 
-    <!-- Frühstück -->
     <div class="panel active" id="p-fruehstueck">
       <div class="feature">
-        <img data-img="breakfast" alt="Marokkanisches Frühstück">
+        <img data-img="fruehstueck" alt="Marokkanisches Frühstück">
         <div class="in">
           <div class="eyebrow">Der perfekte Start in den Tag</div>
           <h3>Marokkanisches Frühstück</h3>
@@ -416,54 +428,57 @@ footer .bottom a:hover{color:var(--cream)}
       </div>
     </div>
 
-    <!-- Leckereien & Suppen -->
     <div class="panel" id="p-leckereien">
       <div class="panel-grid">
         <div>
-          <div class="eyebrow" style="margin-bottom:.4rem">Marokkanische Leckereien</div>
-          <div class="dish"><div class="row"><h4>Msemen</h4><span class="dots"></span><span class="price">2,00 €</span></div><p>Marokkanisches Pfannengebäck</p></div>
-          <div class="dish"><div class="row"><h4>Harcha</h4><span class="dots"></span><span class="price">2,00 €</span></div><p>Marokkanisches Pfannenbrot</p></div>
-          <div class="dish"><div class="row"><h4>Mille-Feuille</h4><span class="dots"></span><span class="price">2,50 €</span></div></div>
-          <div class="dish"><div class="row"><h4>Mini Hähnchen-Pastilla</h4><span class="dots"></span><span class="price">6,50 €</span></div><p>Glasnudeln, Hähnchen, Mandeln, Zwiebel und Ei in orientalischen Gewürzen, ummantelt im dünnen Teig</p></div>
-          <div class="dish"><div class="row"><h4>Marokkanischer Salat</h4><span class="dots"></span><span class="price">8,50 €</span></div></div>
+          <div class="dish has"><img class="th" data-img="msemen" alt="Msemen" loading="lazy"><div><div class="row"><h4>Msemen</h4><span class="dots"></span><span class="price">2,00 €</span></div><p>Marokkanisches Pfannengebäck</p></div></div>
+          <div class="dish has"><img class="th" data-img="harcha" alt="Harcha" loading="lazy"><div><div class="row"><h4>Harcha</h4><span class="dots"></span><span class="price">2,00 €</span></div><p>Marokkanisches Pfannenbrot</p></div></div>
+          <div class="dish has"><img class="th" data-img="millefeuille" alt="Mille-Feuille" loading="lazy"><div><div class="row"><h4>Mille-Feuille</h4><span class="dots"></span><span class="price">2,50 €</span></div></div></div>
+          <div class="dish has"><img class="th" data-img="pastilla" alt="Mini Hähnchen-Pastilla" loading="lazy"><div><div class="row"><h4>Mini Hähnchen-Pastilla</h4><span class="dots"></span><span class="price">6,50 €</span></div><p>Glasnudeln, Hähnchen, Mandeln, Zwiebel und Ei in orientalischen Gewürzen, ummantelt im dünnen Teig</p></div></div>
+          <div class="dish has"><img class="th" data-img="harira" alt="Harira" loading="lazy"><div><div class="row"><h4>Harira</h4><span class="dots"></span><span class="price">6,50 €</span></div><p>Mit Datteln und Zitrone</p></div></div>
         </div>
-        <div>
-          <div class="eyebrow" style="margin-bottom:.4rem">Suppen &amp; Eintöpfe</div>
-          <div class="dish"><div class="row"><h4>Harira</h4><span class="dots"></span><span class="price">6,50 €</span></div><p>Mit Datteln und Zitrone</p></div>
-          <div class="dish"><div class="row"><h4>Bayssara</h4><span class="dots"></span><span class="price">6,50 €</span></div><p>Marokkanische Suppe aus getrockneten Erbsen mit Brot und Oliven</p></div>
-          <div class="dish"><div class="row"><h4>Marokkanische Linsen</h4><span class="dots"></span><span class="price">8,00 €</span></div></div>
-          <div class="dish"><div class="row"><h4>Marokkanische weiße Bohnen</h4><span class="dots"></span><span class="price">8,00 €</span></div></div>
-          <div class="dish"><div class="row"><h4>Caponata</h4><span class="dots"></span><span class="price">9,00 €</span></div><p>Eintopf aus Auberginen, Tomate, Sellerie und Oliven mit Burrata-Käse</p></div>
-        </div>
+        <div><img class="panel-img" data-img="msemen-amlou" alt="Msemen mit Amlou" loading="lazy"></div>
       </div>
     </div>
 
-    <!-- Tajine & Couscous -->
+    <div class="panel" id="p-tagesgerichte">
+      <div class="panel-grid">
+        <div>
+          <div class="dish has"><img class="th" data-img="caponata" alt="Caponata" loading="lazy"><div><div class="row"><h4>Caponata</h4><span class="dots"></span><span class="price">9,00 €</span></div><p>Eintopf aus Auberginen, Tomate, Sellerie und Oliven mit Burrata-Käse</p></div></div>
+          <div class="dish"><div class="row"><h4>Marokkanische Linsen</h4><span class="dots"></span><span class="price">8,00 €</span></div></div>
+          <div class="dish"><div class="row"><h4>Marokkanische weiße Bohnen</h4><span class="dots"></span><span class="price">8,00 €</span></div></div>
+          <div class="dish has"><img class="th" data-img="bissara" alt="Bissara" loading="lazy"><div><div class="row"><h4>Bissara</h4><span class="dots"></span><span class="price">6,50 €</span></div><p>Marokkanische Suppe aus getrockneten Erbsen mit Brot und Oliven</p></div></div>
+          <div class="dish has"><img class="th" data-img="salat" alt="Marokkanischer Salat" loading="lazy"><div><div class="row"><h4>Marokkanischer Salat</h4><span class="dots"></span><span class="price">8,50 €</span></div></div></div>
+        </div>
+        <div><img class="panel-img" data-img="caponata" alt="Caponata mit Burrata" loading="lazy"></div>
+      </div>
+    </div>
+
     <div class="panel" id="p-tajine">
       <div class="panel-grid">
         <div>
-          <div class="dish"><div class="row"><h4>Couscous mit Huhn</h4><span class="dots"></span><span class="price">13,90 €</span></div><p>Mit Gemüse und Tfaya (karamellisierte Zwiebeln und Rosinen)</p></div>
-          <div class="dish"><div class="row"><h4>Tajine Kefta</h4><span class="dots"></span><span class="price">13,90 €</span></div><p>Hackfleischbällchen in Tomatensauce mit Zwiebeln und frischen Kräutern</p></div>
-          <div class="dish"><div class="row"><h4>Lamm-Tajine</h4><span class="dots"></span><span class="price">14,90 €</span></div><p>Mit karamellisierten Pflaumen, Mandeln und Sesam, fein gewürzt</p></div>
-          <div class="dish"><div class="row"><h4>Hähnchen-Tajine</h4><span class="dots"></span><span class="price">13,50 €</span></div></div>
+          <div class="dish has"><img class="th" data-img="couscous" alt="Couscous mit Huhn" loading="lazy"><div><div class="row"><h4>Couscous mit Huhn</h4><span class="dots"></span><span class="price">13,90 €</span></div><p>Mit Gemüse und Tfaya (karamellisierte Zwiebeln und Rosinen)</p></div></div>
+          <div class="dish has"><img class="th" data-img="tajine-kefta" alt="Tajine Kefta" loading="lazy"><div><div class="row"><h4>Tajine Kefta</h4><span class="dots"></span><span class="price">13,90 €</span></div><p>Hackfleischbällchen in Tomatensauce mit Zwiebeln und frischen Kräutern</p></div></div>
+          <div class="dish has"><img class="th" data-img="tajine-lamm" alt="Lamm-Tajine" loading="lazy"><div><div class="row"><h4>Lamm-Tajine</h4><span class="dots"></span><span class="price">14,90 €</span></div><p>Mit karamellisierten Pflaumen, Mandeln und Sesam, fein gewürzt</p></div></div>
+          <div class="dish has"><img class="th" data-img="tajine-huhn" alt="Hähnchen-Tajine" loading="lazy"><div><div class="row"><h4>Hähnchen-Tajine</h4><span class="dots"></span><span class="price">13,50 €</span></div><p>Mit Zwiebeln, Zitrone und Pommes</p></div></div>
         </div>
-        <div><img data-img="tajine" alt="Tajine" style="width:100%;height:100%;min-height:320px;object-fit:cover;border-radius:4px"></div>
+        <div><img class="panel-img" data-img="couscous" alt="Couscous" loading="lazy"></div>
       </div>
     </div>
 
-    <!-- Sandwich & Teller -->
     <div class="panel" id="p-sandwich">
       <p style="text-align:center;color:var(--muted);margin-bottom:1.5rem">Als Sandwich oder auf dem Teller – mit Tomaten, Zwiebeln, Kopfsalat, Oliven und Pommes in marokkanischer Soße</p>
       <div class="panel-grid">
         <div>
-          <div class="dish"><div class="row"><h4>Huhn</h4><span class="dots"></span><span class="price">7,50 €</span></div></div>
-          <div class="dish"><div class="row"><h4>Hackfleisch</h4><span class="dots"></span><span class="price">7,50 €</span></div></div>
+          <div class="dish has"><img class="th" data-img="wrap-huhn" alt="Huhn" loading="lazy"><div><div class="row"><h4>Huhn</h4><span class="dots"></span><span class="price">7,50 €</span></div></div></div>
+          <div class="dish has"><img class="th" data-img="wrap-hack" alt="Hackfleisch" loading="lazy"><div><div class="row"><h4>Hackfleisch</h4><span class="dots"></span><span class="price">7,50 €</span></div></div></div>
           <div class="dish"><div class="row"><h4>Bratwurst</h4><span class="dots"></span><span class="price">7,50 €</span></div></div>
+          <div class="dish has"><img class="th" data-img="wrap-huhn2" alt="Tacos L" loading="lazy"><div><div class="row"><h4>Tacos L</h4><span class="dots"></span><span class="price">7,50 €</span></div><p>Mit Hähnchen oder Hackfleisch</p></div></div>
         </div>
         <div>
           <div class="dish"><div class="row"><h4>Sandwich Thunfisch</h4><span class="dots"></span><span class="price">6,50 €</span></div></div>
-          <div class="dish"><div class="row"><h4>Sandwich Hackfleisch</h4><span class="dots"></span><span class="price">7,50 €</span></div></div>
-          <div class="dish"><div class="row"><h4>Tacos L</h4><span class="dots"></span><span class="price">7,50 €</span></div><p>Mit Hähnchen oder Hackfleisch</p></div>
+          <div class="dish has"><img class="th" data-img="sandwich" alt="Sandwich Hackfleisch" loading="lazy"><div><div class="row"><h4>Sandwich Hackfleisch</h4><span class="dots"></span><span class="price">7,50 €</span></div></div></div>
+          <img class="panel-img" data-img="teller" alt="Teller mit Pommes und Salat" loading="lazy" style="min-height:240px;margin-top:1.2rem">
         </div>
       </div>
     </div>
@@ -483,6 +498,12 @@ footer .bottom a:hover{color:var(--cream)}
         <div class="chip">Algerische Datteln<small>التمر الجزائري</small></div>
         <div class="chip">Marokkanisches Sellou<small>السلو المغربي</small></div>
         <div class="chip">Frisches marokkanisches Brot<small>الخبز المغربي الطازج</small></div>
+      </div>
+      <div class="gallery" style="margin-top:2rem;grid-auto-rows:200px">
+        <figure><img data-img="gebaeck" alt="Marokkanisches Gebäck" loading="lazy"></figure>
+        <figure><img data-img="msemen-spinat" alt="Msemen mit Spinat" loading="lazy"></figure>
+        <figure><img data-img="datteln" alt="Datteln" loading="lazy"></figure>
+        <figure><img data-img="millefeuille2" alt="Mille-Feuille" loading="lazy"></figure>
       </div>
     </div>
 
@@ -514,9 +535,31 @@ footer .bottom a:hover{color:var(--cream)}
           <div class="dish"><div class="row"><h4>Fruit-Punch</h4><span class="dots"></span><span class="price">5,50 €</span></div></div>
         </div>
       </div>
+      <div class="gallery" style="margin-top:2rem;grid-auto-rows:200px">
+        <figure><img data-img="int-tee" alt="Marokkanischer Minztee" loading="lazy"></figure>
+        <figure><img data-img="kaffee" alt="Kaffee" loading="lazy"></figure>
+        <figure><img data-img="cappuccino" alt="Cappuccino" loading="lazy"></figure>
+        <figure><img data-img="kaffee2" alt="Milchkaffee" loading="lazy"></figure>
+      </div>
     </div>
 
     <p class="menu-note">* Zusatzstoffe und Allergene können bei uns an der Theke eingesehen werden. Alle Preise inkl. MwSt.</p>
+  </div>
+</section>
+
+<!-- ============ VIDEOS ============ -->
+<section id="videos">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Einblicke</div>
+      <h2>Frisch aus unserer Küche</h2>
+      <div class="divider"><svg viewBox="0 0 24 24"><path d="M12 1l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/></svg></div>
+    </div>
+    <div class="reels">
+      <div class="reel reveal"><video autoplay muted loop playsinline preload="metadata" poster="reel-kefta.jpg"><source src="reel-kefta.mp4" type="video/mp4"></video><span>Tajine Kefta</span></div>
+      <div class="reel reveal"><video autoplay muted loop playsinline preload="metadata" poster="reel-msemen.jpg"><source src="reel-msemen.mp4" type="video/mp4"></video><span>Msemen mit Amlou</span></div>
+      <div class="reel reveal"><video autoplay muted loop playsinline preload="metadata" poster="reel-ambiente.jpg"><source src="reel-ambiente.mp4" type="video/mp4"></video><span>Unser Café</span></div>
+    </div>
   </div>
 </section>
 
@@ -540,7 +583,7 @@ footer .bottom a:hover{color:var(--cream)}
 
 <!-- ============ EINRICHTUNG ============ -->
 <section class="interior">
-  <div class="bg" data-bg="display"></div>
+  <div class="bg" data-bg="int-bar"></div>
   <div class="wrap">
     <div class="box reveal">
       <div class="eyebrow">Ambiente</div>
@@ -562,13 +605,23 @@ footer .bottom a:hover{color:var(--cream)}
     </div>
     <div class="gallery">
       <figure class="tall reveal"><img data-img="storefront" alt="Außenansicht Lounge Café" loading="lazy"></figure>
-      <figure class="wide reveal"><img data-img="interior" alt="Innenraum" loading="lazy"></figure>
-      <figure class="reveal"><img data-img="tea" alt="Marokkanischer Tee" loading="lazy"></figure>
-      <figure class="reveal"><img data-img="tajine" alt="Tajine" loading="lazy"></figure>
-      <figure class="tall reveal"><img data-img="sweets" alt="Marokkanisches Gebäck" loading="lazy"></figure>
-      <figure class="reveal"><img data-img="millefeuille" alt="Mille-Feuille" loading="lazy"></figure>
-      <figure class="wide reveal"><img data-img="icedtea" alt="Minztee" loading="lazy"></figure>
-      <figure class="reveal"><img data-img="sandwich" alt="Sandwich" loading="lazy"></figure>
+      <figure class="wide reveal"><img data-img="int-sofa" alt="Lounge mit Minztee und Msemen" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="tajine-kefta" alt="Tajine Kefta" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="couscous" alt="Couscous" loading="lazy"></figure>
+      <figure class="tall reveal"><img data-img="fruehstueck" alt="Marokkanisches Frühstück" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="int-bar" alt="Teetabletts an der Bar" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="pastilla" alt="Pastilla" loading="lazy"></figure>
+      <figure class="wide reveal"><img data-img="fruehstueck2" alt="Msemen, Harcha und Minztee" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="gebaeck2" alt="Marokkanische Kekse" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="harira" alt="Harira" loading="lazy"></figure>
+      <figure class="tall reveal"><img data-img="int-tee" alt="Minztee in der Lounge" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="tajine-lamm" alt="Tajine" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="bissara" alt="Bissara" loading="lazy"></figure>
+      <figure class="wide reveal"><img data-img="wrap-hack2" alt="Wrap mit Pommes" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="ghriba" alt="Gebäck" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="suesskartoffel" alt="Süßkartoffeln aus dem Ofen" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="fruehstueck3" alt="Minztee und Msemen" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="millefeuille" alt="Mille-Feuille" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -617,7 +670,7 @@ footer .bottom a:hover{color:var(--cream)}
   <div class="wrap">
     <div class="f-grid">
       <div>
-        <a href="#start" class="logo"><div class="emblem"><b>Lc</b></div><div class="name">Lounge Café<small>Marokkanisches Restaurant</small></div></a>
+        <a href="#start" class="logo"><img class="logo-img" src="logo.jpg" alt="Lounge Café Logo"><div class="name">Lounge Café<small>Marokkanisches Restaurant</small></div></a>
         <div class="socials">
           <a href="https://www.instagram.com/loungecafemarokkanischkrefeld" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.06C4.2 2.2 2.2 4.2 2.06 7.9 2 9 2 9.3 2 12s0 3 .06 4.1c.15 3.7 2.15 5.7 5.84 5.84C9 22 9.3 22 12 22s3 0 4.1-.06c3.7-.15 5.7-2.15 5.84-5.84C22 15 22 14.7 22 12s0-3-.06-4.1C21.8 4.2 19.8 2.2 16.1 2.06 15 2 14.7 2 12 2z"/></svg></a>
           <a href="https://wa.me/491794956553" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
@@ -625,7 +678,7 @@ footer .bottom a:hover{color:var(--cream)}
       </div>
       <div><h6>Navigation</h6><ul><li><a href="#start">Startseite</a></li><li><a href="#speisekarte">Speisekarte</a></li><li><a href="#ueber-uns">Über uns</a></li><li><a href="#galerie">Galerie</a></li><li><a href="#bewertungen">Bewertungen</a></li><li><a href="#kontakt">Reservierung</a></li></ul></div>
       <div><h6>Kontakt</h6><ul><li>Ostwall 49A</li><li>47798 Krefeld</li><li><a href="tel:+491794956553">Tel.: 0179 4956553</a></li><li><a href="https://wa.me/491794956553" target="_blank" rel="noopener">WhatsApp schreiben</a></li></ul></div>
-      <div><h6>Öffnungszeiten</h6><ul><li>Mo: 09:00 – 16:00</li><li>Di – Do: 09:00 – 23:30</li><li>Fr: 17:00 – 00:00</li><li>Sa: 12:00 – 00:00</li><li>So: 12:00 – 23:30</li></ul></div>
+      <div><h6>Öffnungszeiten</h6><ul><li>Mo: 09:00 – 16:00</li><li>Di – Do: 09:00 – 23:00</li><li>Fr: 17:00 – 23:00</li><li>Sa: 12:00 – 00:00</li><li>So: 12:00 – 22:00</li></ul></div>
     </div>
     <div class="bottom">
       <span>© <span id="yr">2026</span> Lounge Café – Marokkanisches Restaurant. Alle Rechte vorbehalten.</span>
@@ -639,10 +692,8 @@ footer .bottom a:hover{color:var(--cream)}
 <div class="lightbox" id="lb"><button aria-label="Schließen">×</button><img alt=""></div>
 
 <script>
-/* Bilder liegen im Ordner img/ – zum Austauschen einfach die Datei ersetzen */
-const IMAGES = {};
-['storefront','interior','display','tajine','icedtea','millefeuille','sweets','tea','sandwich'].forEach(k=>IMAGES[k]=k+'.jpg');
-IMAGES.breakfast = IMAGES.tea;
+/* Bilder: Dateiname = Schlüssel + .jpg (im selben Ordner) */
+const IMAGES = new Proxy({}, {get:(_,k)=>k+'.jpg'});
 
 /* Fallback: marokkanisches Muster, falls ein Bild nicht lädt */
 const FALLBACK = "data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480"><defs><pattern id="p" width="80" height="80" patternUnits="userSpaceOnUse"><g fill="none" stroke="#d9a066" stroke-opacity=".22"><path d="M40 4l10 26 26 10-26 10-10 26-10-26L4 40l26-10z"/><rect x="26" y="26" width="28" height="28" transform="rotate(45 40 40)"/><circle cx="40" cy="40" r="6"/></g></pattern></defs><rect width="480" height="480" fill="#141c29"/><rect width="480" height="480" fill="url(#p)"/></svg>');
@@ -680,7 +731,7 @@ document.querySelectorAll('.cat[data-tab]').forEach(c=>c.addEventListener('click
 
 /* Öffnungszeiten: heute markieren + geöffnet/geschlossen */
 (function(){
-  const H={1:[[9,0],[16,0]],2:[[9,0],[23,30]],3:[[9,0],[23,30]],4:[[9,0],[23,30]],5:[[17,0],[24,0]],6:[[12,0],[24,0]],0:[[12,0],[23,30]]};
+  const H={1:[[9,0],[16,0]],2:[[9,0],[23,0]],3:[[9,0],[23,0]],4:[[9,0],[23,0]],5:[[17,0],[23,0]],6:[[12,0],[24,0]],0:[[12,0],[22,0]]};
   const now=new Date(), d=now.getDay(), m=now.getHours()*60+now.getMinutes();
   document.querySelector(`#hours li[data-d="${d}"]`)?.classList.add('today');
   const [o,c]=H[d], om=o[0]*60+o[1], cm=c[0]*60+c[1];
@@ -701,7 +752,7 @@ document.querySelectorAll('.cat[data-tab]').forEach(c=>c.addEventListener('click
 
 /* Galerie Lightbox */
 const lb=document.getElementById('lb');
-document.querySelectorAll('.gallery img').forEach(img=>img.onclick=()=>{lb.querySelector('img').src=img.src;lb.classList.add('open')});
+document.querySelectorAll('.gallery img, .th').forEach(img=>img.onclick=()=>{lb.querySelector('img').src=img.src;lb.classList.add('open')});
 lb.onclick=e=>{if(e.target!==lb.querySelector('img'))lb.classList.remove('open')};
 addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
 
