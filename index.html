@@ -46,11 +46,11 @@ header.scrolled .logo-img{width:54px;height:54px}
 .th{width:58px;height:58px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--line);margin-right:.2rem;cursor:zoom-in}
 .dish.has{display:flex;gap:1rem;align-items:center}.dish.has>div{flex:1}
 .panel-img{width:100%;height:100%;min-height:320px;object-fit:cover;border-radius:4px}
-.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:900px;margin:0 auto}
+.reels{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.2rem;max-width:1150px;margin:0 auto}
 .reel{position:relative;aspect-ratio:9/16;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
 .reel video{width:100%;height:100%;object-fit:cover}
 .reel span{position:absolute;left:0;right:0;bottom:0;padding:1.2rem 1rem .9rem;background:linear-gradient(transparent,rgba(10,15,23,.9));font-family:var(--serif);font-size:1.3rem}
-@media(max-width:700px){.reels{grid-template-columns:1fr 1fr}.reels .reel:last-child{display:none}}
+@media(max-width:700px){.reels{grid-template-columns:1fr 1fr}}
 .emblem{width:72px;height:72px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;position:relative;transition:.3s}
 header.scrolled .emblem{width:56px;height:56px}
 .emblem::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1px dashed rgba(217,160,102,.5)}
@@ -559,6 +559,8 @@ footer .bottom a:hover{color:var(--cream)}
       <div class="reel reveal"><video autoplay muted loop playsinline preload="metadata" poster="reel-kefta.jpg"><source src="reel-kefta.mp4" type="video/mp4"></video><span>Tajine Kefta</span></div>
       <div class="reel reveal"><video autoplay muted loop playsinline preload="metadata" poster="reel-msemen.jpg"><source src="reel-msemen.mp4" type="video/mp4"></video><span>Msemen mit Amlou</span></div>
       <div class="reel reveal"><video autoplay muted loop playsinline preload="metadata" poster="reel-ambiente.jpg"><source src="reel-ambiente.mp4" type="video/mp4"></video><span>Unser Café</span></div>
+      <div class="reel reveal"><video autoplay muted loop playsinline preload="metadata" poster="reel-raum.jpg"><source src="reel-raum.mp4" type="video/mp4"></video><span>Unser Gastraum</span></div>
+      <div class="reel reveal"><video autoplay muted loop playsinline preload="metadata" poster="reel-abend.jpg"><source src="reel-abend.mp4" type="video/mp4"></video><span>Am Abend am Ostwall</span></div>
     </div>
   </div>
 </section>
@@ -667,6 +669,11 @@ footer .bottom a:hover{color:var(--cream)}
       <figure class=" reveal"><img data-img="k3" alt="Minztee-Tabletts an der Bar" loading="lazy"></figure>
       <figure class=" reveal"><img data-img="k4" alt="Gebäck unter der Glashaube" loading="lazy"></figure>
       <figure class="wide reveal"><img data-img="bohnen" alt="Marokkanische weiße Bohnen" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="m0" alt="Flyer Fußball" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="m1" alt="Flyer Lounge Café" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="m2" alt="Marokkanische Snacks" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="m3" alt="Sandwich" loading="lazy"></figure>
+      <figure class=" reveal"><img data-img="m4" alt="Menütafel" loading="lazy"></figure>
     </div>
   </div>
 </section>
